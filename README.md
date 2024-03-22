@@ -1,6 +1,7 @@
 # Portfolio Website
 
-![Portfolio Preview](preview.png)
+![Portfolio Preview](![Uploading Screenshot 2024-03-22 at 15-07-38 PortFolio.png…]()
+)
 
 Welcome to my personal portfolio website! This project showcases my skills, projects, education, and provides an introduction about myself. Built using React and Tailwind CSS, this website is designed to present my work in an engaging and informative manner.
 
@@ -44,4 +45,4 @@ Includes copyright information, credits, and social media links for further inte
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/yourrepositoryname.git
+   git clone https://github.com/cod3-assassin/portfolio-01.git
