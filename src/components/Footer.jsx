@@ -4,7 +4,6 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaHeart } from "react-icons/fa";
 
 const Footer = () => {
-  // Define social icons array for the Footer
   const socialIcons = [
     { icon: <FaGithub />, href: "https://github.com/cod3-assassin" },
 
@@ -20,7 +19,6 @@ const Footer = () => {
           Made with <FaHeart className="text-red-500 inline" /> by cod3_assassin
         </p>
         <div className="flex space-x-4">
-          {/* Render social icons */}
           {socialIcons.map((socialIcon, index) => (
             <SocialIcon key={index} {...socialIcon} />
           ))}
@@ -30,7 +28,6 @@ const Footer = () => {
   );
 };
 
-// Component for rendering individual social icon
 const SocialIcon = ({ icon, href }) => {
   return (
     <a

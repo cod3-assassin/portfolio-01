@@ -1,6 +1,6 @@
 import React from "react";
 import { FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
-import ResumePDF from "../pdf/Resume.pdf"; // Importing the PDF directly
+import ResumePDF from "../pdf/Resume.pdf";
 
 const About = () => {
   const handleAddressClick = () => {

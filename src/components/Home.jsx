@@ -6,7 +6,6 @@ const Home = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-800 text-white">
       <div className="w-full md:max-w-4xl h-full md:h-auto mx-auto px-4 py-8 text-center">
-        {/* Updated height styling */}
         <h1 className="text-4xl font-bold mb-4 relative">
           Hi, I am <TypedTexts texts={["Wasim Shah", "React Developer"]} />
         </h1>
@@ -53,7 +52,6 @@ const Home = () => {
   );
 };
 
-// Component for typing animation
 const TypedTexts = ({ texts }) => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");

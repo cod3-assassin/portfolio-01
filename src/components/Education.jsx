@@ -10,7 +10,6 @@ const Education = () => {
       <div className="container mx-auto px-4 py-8">
         <h2 className="text-4xl font-bold mb-8">Education</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Education Item 1 */}
           <div className="bg-gray-900 rounded-lg p-6 transition duration-300 ease-in-out transform hover:scale-105">
             <div className="flex items-center mb-4">
               <div className="rounded-full bg-blue-500 p-2 mr-4">
@@ -29,7 +28,6 @@ const Education = () => {
             </div>
           </div>
 
-          {/* Education Item 2 */}
           <div className="bg-gray-900 rounded-lg p-6 transition duration-300 ease-in-out transform hover:scale-105">
             <div className="flex items-center mb-4">
               <div className="rounded-full bg-blue-500 p-2 mr-4">
@@ -50,7 +48,6 @@ const Education = () => {
             </div>
           </div>
 
-          {/* Education Item 3 */}
           <div className="bg-gray-900 rounded-lg p-6 transition duration-300 ease-in-out transform hover:scale-105">
             <div className="flex items-center mb-4">
               <div className="rounded-full bg-blue-500 p-2 mr-4">
