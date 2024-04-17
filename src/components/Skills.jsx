@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   FaHtml5,
   FaCss3Alt,
@@ -75,7 +76,7 @@ const SkillItem = ({ name, icon, color, link }) => {
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className="bg-gray-900 p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-2xl transform hover:-translate-y-1"
+      className="bg-gradient-to-br from-black via-gray-900 to-black p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-2xl transform hover:-translate-y-1"
     >
       <div
         className="flex items-center justify-center mb-2"

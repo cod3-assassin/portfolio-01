@@ -27,8 +27,8 @@ const About = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-800 text-white relative overflow-hidden">
-      <div className="container mx-auto px-8 py-12 z-10 relative">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-800 text-white">
+      <div className="container mx-auto px-8 py-12 z-10">
         <h2 className="text-4xl font-bold mb-8">About Me</h2>
         <div className="bg-gray-900 p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
