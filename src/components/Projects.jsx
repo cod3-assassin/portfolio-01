@@ -1,54 +1,99 @@
-import React, { useState } from "react";
+import React from "react";
+import { FaGithub } from "react-icons/fa";
+import AlgoVisulizaer from "./img/AlgoVisualizer.png";
+import RecipeHub from "./img/RecipeHub.png";
 
 const ProjectCard = ({ project }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
-    <div
-      className="w-full md:w-1/3 p-4 relative overflow-hidden"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <div className="max-w-xs rounded overflow-hidden shadow-lg border border-gray-600">
-        {/* Placeholder image */}
-        <div
-          className={`w-full transition-transform duration-300 transform ${
-            isHovered ? "-translate-x-full" : "translate-x-0"
-          }`}
-          style={{
-            filter: isHovered ? "blur(5px)" : "none",
-          }}
-        >
-          <img
-            className="w-full"
-            src={project.imageUrl}
-            alt="Project"
-            style={{ height: "200px" }} // Set desired height
-          />
-        </div>
-        {/* Bottom section */}
-        <div
-          className={`absolute bottom-0 left-0 w-full bg-gray-900 transition-all duration-300 ease-in-out overflow-hidden ${
-            isHovered ? "h-full" : "h-0"
-          }`}
-        >
-          {/* Project title */}
-          <div className="px-6 py-4">
-            <div className="font-bold text-xl mb-2 text-white">
-              {project.title}
-            </div>
-            {/* Project description */}
-            <p className="text-sm text-white">{project.description}</p>
-            {/* Placeholder link */}
-            <a
-              href="#"
-              className={`text-gray-500 italic text-xs ${
-                isHovered ? "opacity-100" : "opacity-0"
-              } transition-opacity duration-300`}
-            >
-              View project details
-            </a>
+    <div className="w-full p-4">
+      <div
+        className={`max-w-full rounded-lg overflow-hidden shadow-lg border border-gray-600 relative transform transition-transform duration-300 ${
+          project.comingSoon
+            ? "hover:shadow-lg"
+            : "hover:scale-105 hover:shadow-2xl"
+        }`}
+      >
+        {project.image && (
+          <div className="w-full">
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-auto rounded-t-lg border-b border-gray-600 object-contain"
+            />
           </div>
+        )}
+        <div
+          className={`bg-gray-900 p-4 ${
+            project.comingSoon ? "rounded-lg" : "rounded-b-lg"
+          }`}
+        >
+          <div className="flex justify-between items-center mb-2">
+            <div className="font-bold text-xl text-white">{project.title}</div>
+            {project.githubLink && (
+              <a
+                href={project.githubLink}
+                className="text-gray-400 hover:text-white"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithub size={24} />
+              </a>
+            )}
+          </div>
+          <div className="text-sm text-white mb-4 space-y-2">
+            {project.description &&
+              project.description
+                .split("\n")
+                .map((line, index) => <p key={index}>{line}</p>)}
+            {project.bullets && (
+              <ul className="list-disc list-inside space-y-1">
+                {project.bullets.map((bullet, index) => (
+                  <li key={index} className="ml-4">
+                    {bullet}
+                  </li>
+                ))}
+              </ul>
+            )}
+            {project.keyFeatures && (
+              <div className="space-y-1">
+                <div className="font-bold">Key Features:</div>
+                <ul className="list-disc list-inside space-y-1">
+                  {project.keyFeatures.map((feature, index) => (
+                    <li key={index} className="ml-4">
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {project.usefulFor && (
+              <div className="space-y-1">
+                <div className="font-bold">Useful For:</div>
+                <ul className="list-disc list-inside space-y-1">
+                  {project.usefulFor.map((use, index) => (
+                    <li key={index} className="ml-4">
+                      {use}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+          {project.liveLink && (
+            <a
+              href={project.liveLink}
+              className="text-blue-400 underline text-sm block mt-2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View live project
+            </a>
+          )}
+          {project.comingSoon && (
+            <div className="text-gray-400 italic text-sm text-center">
+              More projects coming soon...
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -56,54 +101,69 @@ const ProjectCard = ({ project }) => {
 };
 
 const Projects = () => {
-  // Sample project data
   const projects = [
     {
-      imageUrl:
-        "https://www.sketchappsources.com/resources/source-image/weather-app-icons.jpg",
-      title: "Project 1",
-      description: "This is a placeholder description for Project 1.",
+      title: "Algorithm Visualizer",
+      description: `The Algorithm Visualizer is an interactive tool designed to help users understand the inner workings of various data structures and algorithms. It provides visual representations for the following structures and algorithms:`,
+      bullets: [
+        "Arrays: Explore how arrays store and access elements.",
+        "Linked Lists: Visualize the traversal and manipulation of linked list nodes.",
+        "Queues: Understand the FIFO (First-In-First-Out) principle with queue operations.",
+        "Trees: Learn about tree structures, including binary trees and traversal methods.",
+      ],
+      keyFeatures: [
+        "Interactive visualizations for better understanding.",
+        "Step-by-step breakdown of algorithms.",
+        "User-friendly interface with clear explanations.",
+      ],
+      usefulFor: [
+        "Students: Enhance learning with visual aids.",
+        "Educators: Demonstrate concepts in a more engaging way.",
+        "Professionals: Review and refresh algorithmic knowledge.",
+      ],
+      image: AlgoVisulizaer,
+      liveLink: "https://visual-algorithm-simulator.vercel.app/",
+      githubLink: "https://github.com/cod3-assassin/visual-algorithm-simulator",
     },
     {
-      imageUrl:
-        "https://codingartistweb.com/wp-content/uploads/2023/04/Digital-Clock-01-696x392.png",
-      title: "Project 2",
-      description: "This is a placeholder description for Project 2.",
+      title: "Recipe Hub",
+      description: `Recipe Hub is a comprehensive platform that allows users to discover, save, and share their favorite recipes. Utilizing the MealDB API, users can search for recipes by various criteria and manage their collection effortlessly ,with DARK and LIGHT mode.`,
+      bullets: [
+        "Discover recipes: Search for recipes using the MealDB API.",
+        "Add to favorites: Save your favorite recipes for easy access.",
+        "Share recipes: Share your favorite recipes with friends via WhatsApp.",
+        "Remove from favorites: Easily manage your collection by removing recipes.",
+        "Local storage: Cached recipe data for faster access and offline usage.",
+      ],
+      keyFeatures: [
+        "Extensive recipe search capabilities.",
+        "User-friendly interface for managing favorites.",
+        "Seamless sharing options through WhatsApp.",
+        "Optimized for speed with local storage caching.",
+      ],
+      usefulFor: [
+        "Home cooks: Discover new recipes and manage your favorites.",
+        "Food enthusiasts: Share your culinary finds with friends.",
+        "Busy professionals: Quickly access saved recipes, even offline.",
+      ],
+      image: RecipeHub,
+      liveLink: "https://recipehub-lemon.vercel.app/",
+      githubLink: "https://github.com/cod3-assassin/recipehub",
     },
-    {
-      imageUrl:
-        "https://www.crio.do/blog/content/images/2021/03/Javascript-projects--React.png",
-      title: "Project 3",
-      description: "This is a placeholder description for Project 3.",
-    },
-    {
-      imageUrl:
-        "https://s3-ap-south-1.amazonaws.com/trt-blog-ghost/2023/01/Chat-App.jpg",
-      title: "Project 4",
-      description: "This is a placeholder description for Project 4.",
-    },
-    {
-      imageUrl:
-        "https://s3-ap-south-1.amazonaws.com/trt-blog-ghost/2023/01/Shopping-App.jpg",
-      title: "Project 5",
-      description: "This is a placeholder description for Project 5.",
-    },
-    {
-      imageUrl: "https://i.morioh.com/2019/12/03/d57b1ac0be5b.jpg",
-      title: "Project 6",
-      description: "This is a placeholder description for Project 6.",
-    },
-    // Add more project objects as needed
   ];
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-800 text-white">
       <div className="container mx-auto px-4 py-8">
-        <h2 className="text-4xl font-bold mb-8">Projects</h2>
-        <div className="flex flex-wrap -mx-4">
+        <h2 className="text-4xl font-bold mb-8 text-center">Projects</h2>
+        <div className="flex flex-col items-center w-full">
           {projects.map((project, index) => (
             <ProjectCard key={index} project={project} />
           ))}
+          {/* More projects coming soon */}
+          <div className="text-center text-gray-400 italic text-xl mt-4 shadow-sm">
+            <span>More projects coming soon...</span>
+          </div>
         </div>
       </div>
     </div>
