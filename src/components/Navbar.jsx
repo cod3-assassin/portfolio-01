@@ -33,7 +33,7 @@ const Navbar = () => {
   return (
     <BrowserRouter>
       <nav
-        className={`navbar p-4 fixed w-full z-10 top-0 ${
+        className={`navbar p-4 fixed w-full z-20 top-0 ${
           navbarBlur ? "bg-opacity-90 backdrop-blur-lg" : ""
         }`}
         style={{ marginBottom: "10px" }}
