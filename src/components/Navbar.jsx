@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 import { About, Education, Skills, Projects, Home } from "./ImportExport";
-import { FaUser, FaGraduationCap, FaTools, FaBriefcase } from "react-icons/fa";
+import { MdPerson, MdSchool, MdBuild, MdWork } from "react-icons/md";
 
 const Navbar = () => {
   const [navbarBlur, setNavbarBlur] = useState(false);
@@ -52,13 +52,13 @@ const Navbar = () => {
           <ul className="md:flex hidden flex-col md:flex-row md:gap-6 mt-4 md:mt-0">
             <li>
               <ScrollLink
-                to="about"
+                to="projects"
                 spy={true}
                 smooth={true}
                 duration={500}
                 className="text-base font-bold text-white hover:text-gray-300 transition duration-300 cursor-pointer flex items-center"
               >
-                <FaUser className="mr-2" /> About
+                <MdWork className="mr-2" /> Projects
               </ScrollLink>
             </li>
 
@@ -70,18 +70,18 @@ const Navbar = () => {
                 duration={500}
                 className="text-base font-bold text-white hover:text-gray-300 transition duration-300 cursor-pointer flex items-center"
               >
-                <FaTools className="mr-2" /> Skills
+                <MdBuild className="mr-2" /> Skills
               </ScrollLink>
             </li>
             <li>
               <ScrollLink
-                to="projects"
+                to="about"
                 spy={true}
                 smooth={true}
                 duration={500}
                 className="text-base font-bold text-white hover:text-gray-300 transition duration-300 cursor-pointer flex items-center"
               >
-                <FaBriefcase className="mr-2" /> Projects
+                <MdPerson className="mr-2" /> About
               </ScrollLink>
             </li>
             <li>
@@ -92,7 +92,7 @@ const Navbar = () => {
                 duration={500}
                 className="text-base font-bold text-white hover:text-gray-300 transition duration-300 cursor-pointer flex items-center"
               >
-                <FaGraduationCap className="mr-2" /> Education
+                <MdSchool className="mr-2" /> Education
               </ScrollLink>
             </li>
           </ul>

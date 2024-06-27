@@ -27,7 +27,7 @@ const Skills = () => {
     MongoDB: "#47A248",
     Bootstrap: "#7952B3",
     "Tailwind CSS": "#38B2AC",
-    "Express.js": "#000000",
+    "Express.js": "#FFFF00",
     Git: "#F05032",
     Redux: "#764ABC",
     DSA: "#007ACC",
