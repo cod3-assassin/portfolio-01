@@ -1,6 +1,6 @@
 import React from "react";
 import { FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
-import ResumePDF from "../pdf/Wasim_resume_fullstack.pdf";
+import ResumePDF from "../pdf/Complete.pdf";
 
 const About = () => {
   const handleAddressClick = () => {
@@ -20,7 +20,7 @@ const About = () => {
   const handleDownloadResume = () => {
     const a = document.createElement("a");
     a.href = ResumePDF; // Use the imported PDF directly as href
-    a.download = "Resume.pdf";
+    a.download = "WasimShahResume.pdf"; // Set the desired file name here
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
