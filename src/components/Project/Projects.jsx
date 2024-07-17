@@ -1,6 +1,6 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
-import AlgoVisulizaer from "../img/AlgoVisualizer.png";
+import AlgoVisualizer from "../img/AlgoVisualizer.png";
 import RecipeHub from "../img/RecipeHub.png";
 import BusinessWeb from "../img/bussinesswebsite.png";
 import ResumeBuilderImage from "../img/ResumeBuilderImage.png";
@@ -16,15 +16,37 @@ const Projects = () => {
       image: FiftyProjectsImg,
       liveLink: "https://react-50-projects.vercel.app/",
       githubLink: "https://github.com/cod3-assassin/react-50-projects",
+      howToUse:
+        "Visit the project website at https://react-50-projects.vercel.app. Browse through the list of projects to see a variety of React implementations. Click on any project to view its live demo. Use the navigation menu to explore different categories and topics. Review the source code to understand the implementation details and learn from the examples.",
+      pros: [
+        "Comprehensive coverage of React concepts",
+        "Hands-on learning experience",
+        "Well-structured projects",
+      ],
+      cons: [
+        "Some projects may require prior React knowledge",
+        "No backend integration",
+      ],
     },
     {
       title: "Algorithm Visualizer",
       description:
         "The Algorithm Visualizer is an interactive tool designed to help users understand various data structures and algorithms.",
       technologies: ["React.js", "D3.js", "Visualization"],
-      image: AlgoVisulizaer,
+      image: AlgoVisualizer,
       liveLink: "https://visual-algorithm-simulator.vercel.app/",
       githubLink: "https://github.com/cod3-assassin/visual-algorithm-simulator",
+      howToUse:
+        "Visit the Algorithm Visualizer at https://visual-algorithm-simulator.vercel.app. Select the type of data structure you want to visualize (e.g., arrays, linked lists, queues, trees). Follow the on-screen instructions to input data or manipulate the structure. Watch the visual representation of algorithms in action. Use the control buttons to step through the algorithm and see how it processes the data. Adjust settings like speed and visualization mode to enhance your learning experience.",
+      pros: [
+        "Interactive and educational",
+        "Supports multiple algorithms",
+        "Intuitive UI",
+      ],
+      cons: [
+        "Limited to visualizations",
+        "Does not include advanced algorithms",
+      ],
     },
     {
       title: "Recipe Hub",
@@ -34,6 +56,14 @@ const Projects = () => {
       image: RecipeHub,
       liveLink: "https://recipehub-lemon.vercel.app/",
       githubLink: "https://github.com/cod3-assassin/recipehub",
+      howToUse:
+        "Visit the Recipe Hub at https://recipehub-lemon.vercel.app. Use the search bar to find recipes by ingredients or dish name. Explore categories to discover various types of recipes. Click on any recipe to view detailed instructions and ingredients. Save your favorite recipes by creating an account and logging in. Toggle between DARK and LIGHT mode using the switch at the top right corner.",
+      pros: [
+        "User-friendly interface",
+        "Extensive recipe database",
+        "Save feature",
+      ],
+      cons: ["Requires internet connection", "Dependent on external API"],
     },
     {
       title: "Stylish Web Layout",
@@ -43,6 +73,10 @@ const Projects = () => {
       image: BusinessWeb,
       liveLink: "https://business-webisite-html-css.vercel.app/",
       githubLink: "https://github.com/cod3-assassin/Bussiness-website",
+      howToUse:
+        "Clone the repository and open the index.html file in a web browser to view the layout.",
+      pros: ["Modern design", "Responsive layout", "Easy to customize"],
+      cons: ["Static content", "No backend functionality"],
     },
     {
       title: "Skillsynergy",
@@ -52,11 +86,21 @@ const Projects = () => {
       image: ResumeBuilderImage,
       liveLink: "https://skillsynergy-lime.vercel.app/",
       githubLink: "https://github.com/cod3-assassin/skillsynergy",
+      howToUse: "Fill out the form fields and export your resume as a PDF.",
+      pros: [
+        "Easy to use",
+        "Professional templates",
+        "PDF export functionality",
+      ],
+      cons: ["Limited customization options", "Requires manual data entry"],
     },
   ];
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-800 text-white">
+    <div
+      className="min-h-screen flex flex-col items-center justify-center bg-gray-800 text-white"
+      id="next-section"
+    >
       <div className="container mx-auto px-4 py-8">
         <h2 className="text-4xl font-bold mb-8 text-center">Projects</h2>
         <div className="flex flex-wrap -mx-4">
@@ -65,6 +109,9 @@ const Projects = () => {
           ))}
         </div>
       </div>
+      <p className="text-xl md:text-3xl italic text-gray-600">
+        More Projects are Coming Soon....
+      </p>
     </div>
   );
 };

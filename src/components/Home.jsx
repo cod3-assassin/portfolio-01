@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { FaGithub, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { Link as ScrollLink } from "react-scroll";
 
 const Home = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-800 text-white">
+    <div
+      className="min-h-screen flex flex-col items-center justify-center bg-gray-800 text-white"
+      id="home"
+    >
       <div className="w-full md:max-w-4xl h-full md:h-auto mx-auto px-4 py-8 text-center">
         <h1 className="text-4xl font-bold mb-4 relative">
           Hi, I am <TypedTexts texts={["Wasim Shah", "React Developer"]} />
@@ -14,9 +18,7 @@ const Home = () => {
           captivating and seamless user interfaces that elevate the digital
           experience. With a keen eye for detail and a commitment to excellence,
           I strive to deliver elegant solutions that enhance user engagement and
-          satisfaction. Embracing innovation and continuous learning, I am
-          excited to embark on my journey in crafting immersive web experiences
-          with React.js
+          satisfaction. Embracing innovation and continuous learning.
         </p>
         <div className="flex flex-wrap justify-center space-x-4 mb-8">
           <SocialIcon
@@ -32,21 +34,28 @@ const Home = () => {
             icon={<FaInstagram />}
             href="https://www.instagram.com/cod3_assassin/"
           />
+          <SocialIcon
+            icon={<FaLinkedin />}
+            href="https://www.linkedin.com/in/wasim-shah-3198b52b8/"
+          />
         </div>
-        <div className="text-gray-500 text-xs mt-2">
-          <svg
-            className="w-6 h-6 text-gray-400 animate-bounce inline-block mr-2"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-          </svg>
-          Scroll Down
-        </div>
+
+        <ScrollLink to="next-section" smooth={true} duration={500}>
+          <div className="text-gray-500 text-xs mt-2 cursor-pointer">
+            <svg
+              className="w-6 h-6 text-gray-400 animate-bounce inline-block mr-2"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+            Scroll Down
+          </div>
+        </ScrollLink>
       </div>
     </div>
   );
