@@ -19,7 +19,7 @@ const Projects = () => {
       technologies: ["React.js", "Tailwind CSS", "Responsive Design"],
       image: FiftyProjectsImg,
       liveLink: "https://react-50-projects.vercel.app/",
-      githubLink: "https://github.com/cod3-assassin/react-50-projects",
+      githubLink: "https://github.com/cod3-assassin/react-practice-question",
       howToUse:
         "Visit the project website at https://react-50-projects.vercel.app. Browse through the list of projects to see a variety of React implementations. Click on any project to view its live demo. Use the navigation menu to explore different categories and topics. Review the source code to understand the implementation details and learn from the examples.",
       pros: [
