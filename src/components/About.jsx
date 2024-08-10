@@ -1,8 +1,13 @@
 import React from "react";
 import { FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
 import ResumePDF from "../pdf/Complete.pdf";
+import { useTheme } from "../ThemeContext";
+import FloatingSVGs from "./SVGPatterns";
+import { TbFaceId } from "react-icons/tb";
 
 const About = () => {
+  const { isDarkMode } = useTheme();
+
   const handleAddressClick = () => {
     window.open(
       "https://www.google.com/maps?q=Godavari+wasahat+Sakuri+Tal+Rahata+423109"
@@ -19,61 +24,93 @@ const About = () => {
 
   const handleDownloadResume = () => {
     const a = document.createElement("a");
-    a.href = ResumePDF; // Use the imported PDF directly as href
-    a.download = "WasimShahResume.pdf"; // Set the desired file name here
+    a.href = ResumePDF;
+    a.download = "WasimShahResume.pdf";
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-800 text-white">
-      <div className="container mx-auto px-8 py-12 z-10">
-        <h2 className="text-4xl font-bold mb-8">About Me</h2>
-        <div className="bg-gray-900 p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300">
+    <div
+      className={`relative min-h-screen flex flex-col items-center justify-center ${
+        isDarkMode
+          ? "bg-gray-900 text-gray-100"
+          : "bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 text-gray-900"
+      } overflow-hidden transition-colors duration-500`}
+    >
+      {/* SVG background container */}
+      <div className="absolute inset-0">
+        <FloatingSVGs isDarkMode={isDarkMode} />
+      </div>
+
+      <div className="container mx-auto px-6 py-12 relative">
+        <h2 className="text-4xl font-bold mb-12 text-center flex items-center justify-center">
+          <TbFaceId className="mr-4 text-5xl" />
+          About Me
+        </h2>
+        <div
+          className={`${
+            isDarkMode
+              ? "bg-gray-900 text-gray-100"
+              : "bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 text-gray-900"
+          } p-8 rounded-lg shadow-2xl transition duration-300 relative`}
+        >
+          <div className="absolute inset-0">
+            <FloatingSVGs isDarkMode={isDarkMode} />
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <div className="mb-6">
-                <span className="font-bold">Name:</span>
-                <span className="ml-4">Wasim Shah</span>
+            <div className="space-y-6">
+              <div className="flex items-center">
+                <span className="font-bold text-xl">Name:</span>
+                <span className="ml-4 text-lg">Wasim Shah</span>
               </div>
-              <div className="mb-6">
-                <span className="font-bold">Date of Birth:</span>
-                <span className="ml-4">20 June 1999</span>
+              <div className="flex items-center">
+                <span className="font-bold text-xl">Date of Birth:</span>
+                <span className="ml-4 text-lg">20 June 1999</span>
               </div>
-              <div className="mb-6">
-                <span className="font-bold">Nationality:</span>
-                <span className="ml-4">Indian</span>
+              <div className="flex items-center">
+                <span className="font-bold text-xl">Nationality:</span>
+                <span className="ml-4 text-lg">Indian</span>
               </div>
-              <div className="mb-6">
-                <span className="font-bold">Languages:</span>
-                <span className="ml-4">English, Hindi, Marathi</span>
+              <div className="flex items-center">
+                <span className="font-bold text-xl">Languages:</span>
+                <span className="ml-4 text-lg">English, Hindi, Marathi</span>
               </div>
             </div>
-            <div>
-              <div className="mb-6 cursor-pointer" onClick={handleAddressClick}>
-                <div className="flex items-center">
-                  <FaMapMarkerAlt className="mr-4" />
-                  <span>Godavari wasahat, Sakuri, Tal: Rahata 423109</span>
-                </div>
+            <div className="space-y-6">
+              <div
+                className="cursor-pointer flex items-center"
+                onClick={handleAddressClick}
+              >
+                <FaMapMarkerAlt className="mr-4 text-blue-500 text-2xl" />
+                <span className="text-lg">
+                  Godavari wasahat, Sakuri, Tal: Rahata 423109
+                </span>
               </div>
-              <div className="mb-6 cursor-pointer" onClick={handleEmailClick}>
-                <div className="flex items-center">
-                  <FaEnvelope className="mr-4" />
-                  <span>lawlitel915@gmail.com</span>
-                </div>
+              <div
+                className="cursor-pointer flex items-center"
+                onClick={handleEmailClick}
+              >
+                <FaEnvelope className="mr-4 text-red-500 text-2xl" />
+                <span className="text-lg">lawlitel915@gmail.com</span>
               </div>
-              <div className="mb-6 cursor-pointer" onClick={handlePhoneClick}>
-                <div className="flex items-center">
-                  <FaPhone className="mr-4" />
-                  <span>+917066626439</span>
-                </div>
+              <div
+                className="cursor-pointer flex items-center"
+                onClick={handlePhoneClick}
+              >
+                <FaPhone className="mr-4 text-green-500 text-2xl" />
+                <span className="text-lg">+917066626439</span>
               </div>
             </div>
           </div>
           <div className="mt-8 flex justify-center">
             <button
-              className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg focus:outline-none"
+              className={`py-3 px-6 rounded-lg font-semibold focus:outline-none transition-colors duration-300 ${
+                isDarkMode
+                  ? "bg-blue-600 hover:bg-blue-700 text-white shadow-lg"
+                  : "bg-blue-500 hover:bg-blue-600 text-white shadow-md"
+              }`}
               onClick={handleDownloadResume}
             >
               Download Resume

@@ -1,5 +1,4 @@
 import React from "react";
-
 import {
   FaHtml5,
   FaCss3Alt,
@@ -8,7 +7,9 @@ import {
   FaNodeJs,
   FaGitAlt,
   FaDatabase,
+  FaUserNinja,
 } from "react-icons/fa";
+import { GiNinjaHeroicStance } from "react-icons/gi";
 import {
   SiMongodb,
   SiBootstrap,
@@ -16,8 +17,12 @@ import {
   SiExpress,
   SiRedux,
 } from "react-icons/si";
+import FloatingSVGs from "./SVGPatterns"; // Importing SVG patterns
+import { useTheme } from "../ThemeContext";
 
 const Skills = () => {
+  const { isDarkMode } = useTheme(); // Get the theme context
+
   const skillColors = {
     HTML: "#E34F26",
     CSS: "#1572B6",
@@ -51,9 +56,20 @@ const Skills = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-800 text-white">
-      <div className="container mx-auto px-4 py-8">
-        <h2 className="text-4xl font-bold mb-8">Skills</h2>
+    <div
+      className={`relative min-h-screen flex flex-col items-center justify-center ${
+        isDarkMode
+          ? "bg-gray-900 text-gray-100"
+          : "bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 text-gray-900"
+      } overflow-hidden transition-colors duration-500`}
+    >
+      <FloatingSVGs isDarkMode={isDarkMode} className="absolute inset-0" />{" "}
+      {/* Add SVG patterns */}
+      <div className="container mx-auto px-4 py-8 relative">
+        <h2 className="text-4xl font-bold mb-8 text-center flex items-center justify-center">
+          <GiNinjaHeroicStance className="mr-2" /> SkillSet
+        </h2>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {Object.keys(skillColors).map((skillName, index) => (
             <SkillItem
@@ -62,6 +78,7 @@ const Skills = () => {
               icon={getIcon(skillName)}
               color={skillColors[skillName]}
               link={skillLinks[skillName]}
+              isDarkMode={isDarkMode}
             />
           ))}
         </div>
@@ -70,18 +87,24 @@ const Skills = () => {
   );
 };
 
-const SkillItem = ({ name, icon, color, link }) => {
+const SkillItem = ({ name, icon, color, link, isDarkMode }) => {
   return (
     <a
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className="bg-gradient-to-br from-black via-gray-900 to-black p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-2xl transform hover:-translate-y-1"
+      className={`p-6 rounded-lg transition duration-300 transform hover:scale-105 ${
+        isDarkMode
+          ? "bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 text-gray-100"
+          : "bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 text-gray-900"
+      } flex flex-col items-center`}
+      style={{
+        boxShadow: isDarkMode
+          ? "0 2px 6px rgba(255, 255, 255, 0.05)"
+          : "0 2px 6px rgba(0, 0, 0, 0.05)",
+      }}
     >
-      <div
-        className="flex items-center justify-center mb-2"
-        style={{ color: color }}
-      >
+      <div className="flex items-center justify-center mb-2" style={{ color }}>
         {icon}
       </div>
       <div className="text-lg font-semibold text-center">{name}</div>

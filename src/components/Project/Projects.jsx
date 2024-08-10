@@ -5,8 +5,12 @@ import RecipeHub from "../img/RecipeHub.png";
 import BusinessWeb from "../img/bussinesswebsite.png";
 import ResumeBuilderImage from "../img/ResumeBuilderImage.png";
 import FiftyProjectsImg from "../img/50-projects.png";
+import { useTheme } from "../../ThemeContext";
+import FloatingSVGs from "../SVGPatterns"; // Assuming you have this SVG component
 
 const Projects = () => {
+  const { isDarkMode } = useTheme(); // Accessing the theme context
+
   const projects = [
     {
       title: "React 50 Projects",
@@ -98,20 +102,27 @@ const Projects = () => {
 
   return (
     <div
-      className="min-h-screen flex flex-col items-center justify-center bg-gray-800 text-white"
+      className={`min-h-screen flex flex-col items-center justify-center ${
+        isDarkMode
+          ? "bg-gray-900 text-gray-100"
+          : "bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 text-gray-900"
+      } overflow-hidden transition-colors duration-500 relative`}
       id="next-section"
     >
-      <div className="container mx-auto px-4 py-8">
+      <div className="absolute inset-0">
+        <FloatingSVGs isDarkMode={isDarkMode} />
+      </div>
+      <div className="container mx-auto px-4 py-8 relative z-10">
         <h2 className="text-4xl font-bold mb-8 text-center">Projects</h2>
         <div className="flex flex-wrap -mx-4">
           {projects.map((project, index) => (
             <ProjectCard key={index} project={project} />
           ))}
         </div>
+        <p className="text-xl md:text-3xl italic text-gray-600 text-center mt-8">
+          More Projects are Coming Soon....
+        </p>
       </div>
-      <p className="text-xl md:text-3xl italic text-gray-600">
-        More Projects are Coming Soon....
-      </p>
     </div>
   );
 };

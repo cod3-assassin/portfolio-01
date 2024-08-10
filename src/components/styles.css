@@ -1,0 +1,23 @@
+/* Transition effect */
+.transition-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Dark overlay */
+    transition: opacity 0.5s ease;
+    z-index: 999;
+    /* Ensure it's on top */
+    opacity: 0;
+}
+
+.transition-overlay.light {
+    background-color: rgba(255, 255, 255, 0.6);
+    /* Light overlay */
+}
+
+.transition-overlay.active {
+    opacity: 1;
+}
