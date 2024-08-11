@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { FaGithub } from "react-icons/fa";
 import { SlRocket } from "react-icons/sl";
 import { SiReact, SiTailwindcss, SiHtml5, SiCss3 } from "react-icons/si";
+import { useTheme } from "../../ThemeContext";
 
 const getTechnologyIcon = (tech) => {
   switch (tech.toLowerCase()) {
@@ -19,6 +20,7 @@ const getTechnologyIcon = (tech) => {
 };
 
 const ExpandedProjectCard = ({ isOpen, onRequestClose, project }) => {
+  const { isDarkMode } = useTheme();
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -34,7 +36,13 @@ const ExpandedProjectCard = ({ isOpen, onRequestClose, project }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75">
+    <div
+      className={`fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 ${
+        isDarkMode
+          ? "bg-gradient-to-r from-zinc-800 via-zinc-900 to-zinc-950 text-gray-100"
+          : "bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 text-gray-900"
+      } `}
+    >
       <div className="relative w-full max-w-4xl p-4 bg-gray-800 rounded-lg overflow-y-auto max-h-screen scrollbar-hidden">
         {/* Use 'scrollbar-hidden' class to hide scrollbar */}
         <button

@@ -32,7 +32,7 @@ const Skills = () => {
     MongoDB: "#47A248",
     Bootstrap: "#7952B3",
     "Tailwind CSS": "#38B2AC",
-    "Express.js": "#FFFF00",
+    "Express.js": "#000",
     Git: "#F05032",
     Redux: "#764ABC",
     DSA: "#007ACC",
@@ -59,7 +59,7 @@ const Skills = () => {
     <div
       className={`relative min-h-screen flex flex-col items-center justify-center ${
         isDarkMode
-          ? "bg-gray-900 text-gray-100"
+          ? "bg-gradient-to-r from-zinc-800 via-zinc-900 to-zinc-950 text-gray-100"
           : "bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 text-gray-900"
       } overflow-hidden transition-colors duration-500`}
     >
@@ -95,7 +95,7 @@ const SkillItem = ({ name, icon, color, link, isDarkMode }) => {
       rel="noopener noreferrer"
       className={`p-6 rounded-lg transition duration-300 transform hover:scale-105 ${
         isDarkMode
-          ? "bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 text-gray-100"
+          ? "bg-gradient-to-r from-zinc-800 via-zinc-900 to-zinc-950 text-gray-100"
           : "bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 text-gray-900"
       } flex flex-col items-center`}
       style={{

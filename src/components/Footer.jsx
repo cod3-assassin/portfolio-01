@@ -60,7 +60,9 @@ const Footer = () => {
   return (
     <footer
       className={`relative py-4 transition-colors duration-500 ${
-        isDarkMode ? "bg-gray-900 text-gray-100" : "bg-gray-100 text-gray-900"
+        isDarkMode
+          ? "bg-gradient-to-r from-zinc-800 via-zinc-900 to-zinc-950 text-gray-100"
+          : "bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 text-gray-900"
       }`}
     >
       <div className="container mx-auto flex flex-col items-center md:items-start md:flex-row justify-between relative">

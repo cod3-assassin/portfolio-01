@@ -14,7 +14,9 @@ const Education = () => {
   return (
     <div
       className={`relative min-h-screen flex flex-col items-center justify-center overflow-hidden transition-colors duration-500 ${
-        isDarkMode ? "bg-gray-900 text-gray-100" : "bg-gray-100 text-gray-900"
+        isDarkMode
+          ? "bg-gradient-to-r from-zinc-800 via-zinc-900 to-zinc-950 text-gray-100"
+          : "bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 text-gray-900"
       }`}
     >
       {/* SVG background container */}
@@ -31,7 +33,7 @@ const Education = () => {
           <div
             className={`${
               isDarkMode
-                ? "bg-gray-800 text-gray-100"
+                ? "bg-gradient-to-r from-zinc-800 via-zinc-900 to-zinc-950 text-gray-100"
                 : "bg-gradient-to-r from-gray-200 via-gray-300 to-gray-400 text-gray-900"
             } p-8 rounded-lg shadow-xl transition duration-300 relative`}
           >
@@ -61,7 +63,7 @@ const Education = () => {
           <div
             className={`${
               isDarkMode
-                ? "bg-gray-800 text-gray-100"
+                ? "bg-gradient-to-r from-zinc-800 via-zinc-900 to-zinc-950 text-gray-100"
                 : "bg-gradient-to-r from-gray-200 via-gray-300 to-gray-400 text-gray-900"
             } p-8 rounded-lg shadow-xl transition duration-300 relative`}
           >
@@ -93,7 +95,7 @@ const Education = () => {
           <div
             className={`${
               isDarkMode
-                ? "bg-gray-800 text-gray-100"
+                ? "bg-gradient-to-r from-zinc-800 via-zinc-900 to-zinc-950 text-gray-100"
                 : "bg-gradient-to-r from-gray-200 via-gray-300 to-gray-400 text-gray-900"
             } p-8 rounded-lg shadow-xl transition duration-300 relative`}
           >

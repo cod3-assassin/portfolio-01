@@ -10,9 +10,10 @@ const Home = () => {
 
   return (
     <div
+      id="home"
       className={`relative min-h-screen flex flex-col items-center justify-center ${
         isDarkMode
-          ? "bg-gray-900 text-gray-100"
+          ? "bg-gradient-to-r from-zinc-800 via-zinc-900 to-zinc-950 text-gray-100"
           : "bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 text-gray-900"
       } overflow-hidden transition-colors duration-500`}
     >

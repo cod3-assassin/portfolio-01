@@ -35,7 +35,7 @@ const About = () => {
     <div
       className={`relative min-h-screen flex flex-col items-center justify-center ${
         isDarkMode
-          ? "bg-gray-900 text-gray-100"
+          ? "bg-gradient-to-r from-zinc-800 via-zinc-900 to-zinc-950 text-gray-100"
           : "bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 text-gray-900"
       } overflow-hidden transition-colors duration-500`}
     >
@@ -52,8 +52,8 @@ const About = () => {
         <div
           className={`${
             isDarkMode
-              ? "bg-gray-900 text-gray-100"
-              : "bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 text-gray-900"
+              ? "bg-gradient-to-r from-zinc-800 via-zinc-900 to-zinc-950 text-gray-100"
+              : "bg-gradient-to-r from-gray-200 via-gray-300 to-gray-400 text-gray-900"
           } p-8 rounded-lg shadow-2xl transition duration-300 relative`}
         >
           <div className="absolute inset-0">
@@ -106,7 +106,7 @@ const About = () => {
           </div>
           <div className="mt-8 flex justify-center">
             <button
-              className={`py-3 px-6 rounded-lg font-semibold focus:outline-none transition-colors duration-300 ${
+              className={`py-3 px-6 rounded-lg font-semibold focus:outline-none transition-colors duration-300 z-10 ${
                 isDarkMode
                   ? "bg-blue-600 hover:bg-blue-700 text-white shadow-lg"
                   : "bg-blue-500 hover:bg-blue-600 text-white shadow-md"
