@@ -83,7 +83,7 @@ const About = () => {
                 className="cursor-pointer flex items-center"
                 onClick={handleAddressClick}
               >
-                <FaMapMarkerAlt className="mr-4 text-blue-500 text-2xl" />
+                <FaMapMarkerAlt className="mr-4 text-blue-500 text-2xl z-10" />
                 <span className="text-lg">
                   Godavari wasahat, Sakuri, Tal: Rahata 423109
                 </span>
@@ -92,14 +92,14 @@ const About = () => {
                 className="cursor-pointer flex items-center"
                 onClick={handleEmailClick}
               >
-                <FaEnvelope className="mr-4 text-red-500 text-2xl" />
+                <FaEnvelope className="mr-4 text-red-500 text-2xl z-10" />
                 <span className="text-lg">lawlitel915@gmail.com</span>
               </div>
               <div
                 className="cursor-pointer flex items-center"
                 onClick={handlePhoneClick}
               >
-                <FaPhone className="mr-4 text-green-500 text-2xl" />
+                <FaPhone className="mr-4 text-green-500 text-2xl z-10" />
                 <span className="text-lg">+917066626439</span>
               </div>
             </div>
