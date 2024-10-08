@@ -9,13 +9,11 @@ const About = () => {
   const { isDarkMode } = useTheme();
 
   const handleAddressClick = () => {
-    window.open(
-      "https://www.google.com/maps?q=Godavari+wasahat+Sakuri+Tal+Rahata+423109"
-    );
+    console.log("Hello");
   };
 
   const handlePhoneClick = () => {
-    window.location.href = "tel:+917066626439";
+    window.location.href = "tel:+91XXXXXXXXXX";
   };
 
   const handleEmailClick = () => {
@@ -23,12 +21,13 @@ const About = () => {
   };
 
   const handleDownloadResume = () => {
-    const a = document.createElement("a");
-    a.href = ResumePDF;
-    a.download = "WasimShahResume.pdf";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+    // const a = document.createElement("a");
+    // a.href = ResumePDF;
+    // a.download = "WasimShahResume.pdf";
+    // document.body.appendChild(a);
+    // a.click();
+    // document.body.removeChild(a);
+    console.log("Reseume download");
   };
 
   return (
@@ -65,10 +64,10 @@ const About = () => {
                 <span className="font-bold text-xl">Name:</span>
                 <span className="ml-4 text-lg">Wasim Shah</span>
               </div>
-{/*               <div className="flex items-center">
+              <div className="flex items-center">
                 <span className="font-bold text-xl">Date of Birth:</span>
-                <span className="ml-4 text-lg">20 June 1999</span>
-              </div> */}
+                <span className="ml-4 text-lg">20 June XXXX</span>
+              </div>
               <div className="flex items-center">
                 <span className="font-bold text-xl">Nationality:</span>
                 <span className="ml-4 text-lg">Indian</span>
@@ -81,12 +80,12 @@ const About = () => {
             <div className="space-y-6">
               <div
                 className="cursor-pointer flex items-center"
-{/*                 onClick={handleAddressClick} */}
+                onClick={handleAddressClick}
               >
                 <FaMapMarkerAlt className="mr-4 text-blue-500 text-2xl z-10" />
-{/*                 <span className="text-lg">
+                <span className="text-lg">
                   Godavari wasahat, Sakuri, Tal: Rahata 423109
-                </span> */}
+                </span>
               </div>
               <div
                 className="cursor-pointer flex items-center"
@@ -111,7 +110,7 @@ const About = () => {
                   ? "bg-blue-600 hover:bg-blue-700 text-white shadow-lg"
                   : "bg-blue-500 hover:bg-blue-600 text-white shadow-md"
               }`}
-{/*               onClick={handleDownloadResume} */}
+              onClick={handleDownloadResume}
             >
               Download Resume
             </button>
